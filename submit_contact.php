@@ -5,15 +5,15 @@
  * ces données doivent être testées et vérifiées.
  */
 
-$getData = $_GET;
+$postData = $_GET;
 
 if (
-    !isset($getData['email'])
-    || !filter_var($getData['email'], FILTER_VALIDATE_EMAIL)
-    || empty($getData['message'])
-    || trim($getData['message']) === ''
+    !isset($postData['email']) //isset() verifie si une variable est definie ou 
+    || !filter_var($postData['email'], FILTER_VALIDATE_EMAIL) //validité de l'email ou non
+    || empty($postData['message'])
+    || trim($postData['message']) === '' //supprime l'espace ou autre caractere(à preciser) en début et en fin de chaîne
 ) {
-    echo('Il faut un email et un message valides pour soumettre le formulaire.');
+    echo ('Il faut un email et un message valides pour soumettre le formulaire.');
     return;
 }
 
@@ -21,6 +21,7 @@ if (
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,6 +29,7 @@ if (
     <title>Site de Recettes - Contact reçu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
 
@@ -37,10 +39,11 @@ if (
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Rappel de vos informations</h5>
-                <p class="card-text"><b>Email</b> : <?php echo($getData['email']); ?></p>
-                <p class="card-text"><b>Message</b> : <?php echo($getData['message']); ?></p>
+                <p class="card-text"><b>Email</b> : <?php echo ($postData['email']); ?></p>
+                <p class="card-text"><b>Message</b> : <?php echo (strip_tags($postData['message'])); ?></p>
             </div>
         </div>
     </div>
 </body>
+
 </html>
