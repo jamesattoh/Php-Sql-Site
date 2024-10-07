@@ -32,6 +32,8 @@ require_once(__DIR__ . '/functions.php');
                 <i><?php echo displayAuthor($recipe['author'], $users); ?></i>
             </article>
         <?php endforeach ?>
+
+        <a href="bonjour.php?nom=Dupont&amp;prenom=Jean">Dis-moi bonjour !</a>
     </div>
 
     <!-- inclusion du bas de page du site -->
@@ -42,6 +44,6 @@ require_once(__DIR__ . '/functions.php');
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
     crossorigin="anonymous"
     ></script>
-    
+
 </body>
 </html>
