@@ -34,3 +34,9 @@ function getRecipes(array $recipes): array
 
     return $valid_recipes;
 }
+
+function redirectToUrl(string $url): never
+{
+    header("Location: {$url}");
+    exit();
+}

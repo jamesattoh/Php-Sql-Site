@@ -70,7 +70,7 @@ if (isset($_FILES['screenshot']) && $_FILES['screenshot']['error'] === 0) {  //$
             <div class="card-body">
                 <h5 class="card-title">Rappel de vos informations</h5>
                 <p class="card-text"><b>Email</b> : <?php echo ($postData['email']); ?></p>
-                <p class="card-text"><b>Message</b> : <?php echo (strip_tags($postData['message'])); ?></p> //htmlspecialchars peut être aussi utilisé a la place de strip-tags
+                <p class="card-text"><b>Message</b> : <?php echo (strip_tags($postData['message'])); ?></p> <!--htmlspecialchars peut être aussi utilisé a la place de strip-tags -->
                 <?php if ($isFileLoaded) : ?>
                     <div class="alert alert-success" role="alert">
                         L'envoi a bien été effectué !

@@ -1,0 +1,4 @@
+*
+!.gitignore  
+
+# le fichier .gitignore lui-même ne doit pas être ignoré. Cela garantit que les règles d’ignorance définies dans le fichier .gitignore sont toujours appliquées et que le fichier .gitignore lui-même est versionné.
